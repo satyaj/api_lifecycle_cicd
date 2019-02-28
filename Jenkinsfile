@@ -1,9 +1,5 @@
 
-        node ('ansible') {
-          def ansiblePlaybookExtraVars = [
-            git_repo: params.GIT_REPO,
-            git_branch: params.GIT_BRANCH,
-          ]        
+        node ('ansible') {      
           stage('Ansible Galaxy')  {
             sh "ansible-galaxy install nmasse-itix.threescale-cicd"
           }
