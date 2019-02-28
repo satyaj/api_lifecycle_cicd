@@ -32,24 +32,6 @@ spec:
             git_repo: params.GIT_REPO,
             git_branch: params.GIT_BRANCH,
           ]        
-          stage('checkout') {
-            script {
-              openshift.withCluster() {
-                openshift.withCredentials() {
-                  openshift.withProject() {
-                    checkout([$class           : 'GitSCM',
-                    branches         : [[name: "*/${GIT_BRANCH}"]],
-                    userRemoteConfigs: [[url: "${GIT_REPO}"]]
-                    ]);
-                    dir("${WORKSPACE}") {
-                      def commit_id = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
-                      echo "${commit_id}"
-                    }
-                  }
-                }
-              }
-            }
-          }
           stage('Ansible Galaxy')  {
             sh "ansible-galaxy install nmasse-itix.threescale-cicd"
           }
