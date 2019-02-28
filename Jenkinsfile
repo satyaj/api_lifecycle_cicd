@@ -1,4 +1,4 @@
-
+node() {
           stage('Ansible Galaxy')  {
             sh "ansible-galaxy install nmasse-itix.threescale-cicd"
           }
@@ -10,4 +10,4 @@
                 colorized: true)
             }
           }
-
+}
