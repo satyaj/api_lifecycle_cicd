@@ -1,0 +1,8 @@
+- hosts: threescale
+  gather_facts: no
+  vars:
+    threescale_cicd_openapi_file: 'echoapi-swagger.yaml'
+    threescale_cicd_openapi_smoketest_operation: 'Echo' 
+  roles:
+  - nmasse-itix.threescale-cicd
+

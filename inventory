@@ -1,0 +1,9 @@
+[all:vars]
+ansible_connection=local
+
+[threescale]
+rhfrance-user05-admin.3scale.net
+
+[threescale:vars]
+threescale_cicd_access_token=70dc811d9f3db2db40f1596a6e9168dab06a4eaa81bb58f527d344f6d488297a
+threescale_cicd_sso_issuer_endpoint=https://3scale-admin:b1fa1dc3-9e83-4cd0-b70d-1589073cd14e@sso.app.itix.fr/auth/realms/user05
